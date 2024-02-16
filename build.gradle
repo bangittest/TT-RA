@@ -1,0 +1,75 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.2'
+    id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '17'
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+
+    implementation group: 'org.jfree', name: 'jfreechart', version: '1.5.3'
+    // https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt
+    implementation 'io.jsonwebtoken:jjwt:0.9.1'
+// https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api
+    implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
+//// https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml
+//    implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '4.1.2'
+
+    // https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml
+    implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '5.2.3'
+
+
+    // https://mvnrepository.com/artifact/org.apache.poi/poi
+    implementation group: 'org.apache.poi', name: 'poi', version: '5.2.3'
+
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-math
+    implementation group: 'org.apache.commons', name: 'commons-math3', version: '3.6.1'
+// https://mvnrepository.com/artifact/jfree/jcommon
+    implementation group: 'jfree', name: 'jcommon', version: '1.0.16'
+    // https://mvnrepository.com/artifact/jfree/jfreechart
+    implementation group: 'jfree', name: 'jfreechart', version: '1.0.13'
+// https://mvnrepository.com/artifact/commons-io/commons-io
+    implementation group: 'commons-io', name: 'commons-io', version: '2.11.0'
+    // https://mvnrepository.com/artifact/com.github.ozlerhakan/poiji
+    implementation group: 'com.github.ozlerhakan', name: 'poiji', version: '4.2.0'
+// https://mvnrepository.com/artifact/com.google.zxing/core
+//    implementation group: 'com.google.zxing', name: 'core', version: '3.4.1'
+    implementation group: 'com.google.zxing', name: 'core', version: '3.5.2'
+// https://mvnrepository.com/artifact/com.google.zxing/javase
+//    implementation group: 'com.google.zxing', name: 'javase', version: '3.5.0'
+    implementation group: 'com.google.zxing', name: 'javase', version: '3.5.3'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'com.mysql:mysql-connector-j'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
